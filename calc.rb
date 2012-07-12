@@ -110,7 +110,7 @@ cal = Calculadora.new
 puts cal.somar(5,5.5)
 puts cal.dividir(0,5, 4, 3, 11111)
 puts cal.dividir(10,0)
-puts cal.raiz(1000,100)
+puts cal.raiz(100,100)
 puts cal.raiz(2,2)
 puts cal.raiz(4,2)
 puts cal.raiz(0.5,2)
