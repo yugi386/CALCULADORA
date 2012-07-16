@@ -1,7 +1,7 @@
 # encoding: utf-8
 
-require 'spec_helper'
-require './calc'
+require 'spec_helper.rb'
+require './calc.rb'
 
 describe Calculadora do
 
@@ -46,7 +46,7 @@ describe Calculadora do
 
 	it "Não deve permitir divisão por zero" do
       # calc.dividir(10, 0).should == false
-	  puts ("Teste - Erro de divisão por zero") if calc.dividir(10, 0).should be_false
+	  calc.dividir(10, 0).should be_false
 	end
     
   end
@@ -57,9 +57,9 @@ describe Calculadora do
 		#calc.pre("0.5".to_f,5).should == true 
 		#calc.pre("0.5".to_i,5,"v").should == false 
 		
-		puts ("Teste - Informe somente números") if calc.pre("a",5).should be_false
-		calc.pre("0.5".to_f,5).should be_true
-		puts ("Teste - Informe somente números") if calc.pre("0.5".to_i,5,"v").should be_false
+		calc.pre("0.5".to_f,5).should is_number
+		calc.pre("0.5".to_i,5,"v").should_not is_number
+		calc.pre(5, 5).should is_number
 	end	
   end
   
@@ -70,9 +70,11 @@ describe Calculadora do
 		# calc.raiz(8,3).should == 2 
 		
 		calc.raiz(4,2).should == 2
-		calc.raiz(-1,125).should be_false
+		calc.raiz(-1,125).should_not is_number
 		calc.raiz(8,3).should == 2 
 	end	
   end
  
 end
+
+require 'matchers.rb'
