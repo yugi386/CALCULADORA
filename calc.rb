@@ -16,7 +16,7 @@ class Calculadora
 	ret = true
     args.each do |x|
 		if !(x.instance_of?(Fixnum) || x.instance_of?(Float) || x.instance_of?(Bignum))
-			puts "informe um número"
+			# puts "informe um número"
 			ret = false
 		end	
 	end	
@@ -43,7 +43,7 @@ class Calculadora
 	ct = 0
 	args.each do |x|
 		if x == 0 && ct != 0
-			puts "Erro de Divisão por Zero"
+			# puts "Erro de Divisão por Zero"
 			# exit
 			return false
 		end	
